@@ -29,3 +29,11 @@ mvnw.cmd
 target/classes/META-INF/MANIFEST.MF
 target/classes/META-INF/maven/com.todo/myfirstwebapp/pom.properties
 target/classes/META-INF/maven/com.todo/myfirstwebapp/pom.xml
+target/classes/META-INF/resources/WEB-INF/jsp/hello.jsp
+target/classes/META-INF/jsp/hello.jsp
+target/classes/application.properties
+target/classes/application.properties
+target/classes/META-INF/jsp/hello.jsp
+target/classes/META-INF/jsp/hello.jsp
+target/classes/application.properties
+target/classes/META-INF/jsp/hello.jsp

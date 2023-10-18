@@ -18,10 +18,10 @@ public class SayHelloController {
 		return "Hello! How are you?";
 	}
 	
-	@RequestMapping("/person")
-	public Person jsonPerson() {
-		return new Person("Vishwas", (short) 25, "Ahmednagar", "7743898263");
-	}
+//	@RequestMapping("/person")
+//	public Person jsonPerson() {
+//		return new Person("Vishwas", (short) 25, "Ahmednagar", "7743898263");
+//	}
 	
 	@RequestMapping("/hellojsp")
 	public String sayHelloJsp() {
