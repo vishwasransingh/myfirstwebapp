@@ -5,10 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@ResponseBody
 public class SayHelloController {
 	
-	//@ResponseBody
+	
+	/**
+	 *@ResponseBody -> Redirects response as a String-message printed on a 
+	 *dynamic webpage and not the user defined custom web-page.
+	 */
+	@ResponseBody
 	@RequestMapping("/hello")
 	public String sayHello() {
 		return "Hello! How are you?";
@@ -19,4 +23,8 @@ public class SayHelloController {
 		return new Person("Vishwas", (short) 25, "Ahmednagar", "7743898263");
 	}
 	
+	@RequestMapping("/hellojsp")
+	public String sayHelloJsp() {
+		return "hello";
+	}
 }
