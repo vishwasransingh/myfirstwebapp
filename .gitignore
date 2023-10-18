@@ -51,3 +51,4 @@ target/surefire-reports/2023-10-18T10-39-24_608.dumpstream
 target/surefire-reports/com.todo.myfirstwebapp.MyfirstwebappApplicationTests.txt
 target/surefire-reports/TEST-com.todo.myfirstwebapp.MyfirstwebappApplicationTests.xml
 target/classes/META-INF/jsp/hello.jsp
+target/classes/META-INF/resources/WEB-INF/jsp/login.jsp
