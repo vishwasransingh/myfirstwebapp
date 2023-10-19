@@ -13,9 +13,7 @@ public class LoginController {
 	private Logger log = LoggerFactory.getLogger(getClass());
 	
 	@RequestMapping("/login")
-	public String login(@RequestParam("username") String name, Model model) {
-		model.addAttribute("name", name);
-		log.info("Name: {}", name);
+	public String login() {
 		return "login";
 	}
 	

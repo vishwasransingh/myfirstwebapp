@@ -8,7 +8,14 @@
 </head>
 <body>
 
-	<h1>Welcome, ${name}!</h1>
+	<h1>Login Form</h1>
+	<br>
+	<form action="">
+		Name: <input type="text" name="name">
+		Password: <input type="password" name="password"><br>
+		<input type="submit" value="submit">
+		
+	</form>
 
 </body>
 </html>
