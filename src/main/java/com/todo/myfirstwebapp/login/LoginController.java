@@ -34,9 +34,11 @@ public class LoginController {
 			model.addAttribute("name", name);
 			model.addAttribute("password", password);
 			return "welcome";
+		} else {
+			model.addAttribute("error", "Wrong user-name or password.");
+			return "login";
 		}
 
-		return "login";
 	}
 
 }

@@ -12,9 +12,10 @@
 	<br>
 	<form action="" method="post">
 		Name: <input type="text" name="name">
-		Password: <input type="password" name="password"><br>
+		Password: <input type="password" name="password">
 		<input type="submit" value="submit">
-		
+		<br>
+		<p style="color:red">${error}</p>
 	</form>
 
 </body>
