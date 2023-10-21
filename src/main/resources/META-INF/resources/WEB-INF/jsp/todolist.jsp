@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -9,6 +7,32 @@
 <body>
 	
 	<h1>Welcome, ${username}!</h1>
-	Your to-dos are: ${todos}	
+	<hr>
+	
+	<h3>Your Tasks:</h3>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Description</th>
+				<th>Target date</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${todos}" var="todo">
+				<tr>
+					<td>${todo.id}</td>
+					<td>${todo.desc}</td>
+					<td>${todo.targetDate}</td>
+					<td>${todo.done}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	
+	
+		
 </body>
 </html>

@@ -7,10 +7,8 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	<div>Welcome, ${name}!</div>
-	<p>
-		Session name:       ${name}<br>     
-		Session password:   ${password}
-	</p>
+	<h2>Welcome, ${name}!</h2>
+
+	<div>Click <a href="/todolist">here</a> to manage your tasks.</div>
 </body>
 </html>

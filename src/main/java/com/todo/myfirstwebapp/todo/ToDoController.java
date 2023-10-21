@@ -13,7 +13,7 @@ public class ToDoController {
 		this.toDoService = toDoService;
 	}
 	
-	@RequestMapping("list-todos")
+	@RequestMapping("todolist")
 	public String listAllToDos(Model model) {
 		model.addAttribute("todos", toDoService.findByUserName("Vishwas"));
 		model.addAttribute("username", "Vishwas");
