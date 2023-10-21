@@ -2,6 +2,8 @@ package com.todo.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
 public class ToDo {
 
 	private int id;

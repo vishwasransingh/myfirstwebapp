@@ -53,3 +53,4 @@ target/surefire-reports/TEST-com.todo.myfirstwebapp.MyfirstwebappApplicationTest
 target/classes/META-INF/jsp/hello.jsp
 target/classes/META-INF/resources/WEB-INF/jsp/login.jsp
 target/classes/META-INF/resources/WEB-INF/jsp/welcome.jsp
+target/classes/META-INF/resources/WEB-INF/jsp/todolist.jsp
