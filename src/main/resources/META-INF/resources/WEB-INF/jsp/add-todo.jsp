@@ -8,28 +8,13 @@
 <body>
 	
 	<div class="container">
-		<h1>Your Tasks:</h1>
+		<h1>Add Task</h1>
 		
-		<table class="table">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Description</th>
-					<th>Target date</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${todos}" var="todo">
-					<tr>
-						<td>${todo.id}</td>
-						<td>${todo.desc}</td>
-						<td>${todo.targetDate}</td>
-						<td>${todo.done}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<form method="post">
+			Task Description: <input type="text" name="desc">
+			<input type="submit" value = "Add" class="btn btn-success">
+		</form>
+		
 	</div>
 	
 	

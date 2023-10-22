@@ -10,7 +10,7 @@
 	<div class="container">
 		<h1>Login Form</h1>
 		<br>
-		<form action="" method="post">
+		<form action="login" method="post">
 			Name: <input type="text" name="name">
 			Password: <input type="password" name="password">
 			<input type="submit" value="submit">

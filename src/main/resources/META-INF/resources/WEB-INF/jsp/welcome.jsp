@@ -10,7 +10,7 @@
 	<div class="container">
 		<h2>Welcome, ${name}!</h2>
 	
-		<div>Click <a href="/todolist">here</a> to manage your tasks.</div>
+		<div>Click <a href="list-todo">here</a> to manage your tasks.</div>
 	</div>
 </body>
 </html>
