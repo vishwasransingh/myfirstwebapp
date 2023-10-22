@@ -7,8 +7,10 @@
 <title>Welcome Page</title>
 </head>
 <body>
-	<h2>Welcome, ${name}!</h2>
-
-	<div>Click <a href="/todolist">here</a> to manage your tasks.</div>
+	<div class="container">
+		<h2>Welcome, ${name}!</h2>
+	
+		<div>Click <a href="/todolist">here</a> to manage your tasks.</div>
+	</div>
 </body>
 </html>

@@ -7,16 +7,17 @@
 <title>Login Page</title>
 </head>
 <body>
-
-	<h1>Login Form</h1>
-	<br>
-	<form action="" method="post">
-		Name: <input type="text" name="name">
-		Password: <input type="password" name="password">
-		<input type="submit" value="submit">
+	<div class="container">
+		<h1>Login Form</h1>
 		<br>
-		<p style="color:red">${error}</p>
-	</form>
+		<form action="" method="post">
+			Name: <input type="text" name="name">
+			Password: <input type="password" name="password">
+			<input type="submit" value="submit">
+			<br>
+			<p style="color:red">${error}</p>
+		</form>
+	</div>
 
 </body>
 </html>

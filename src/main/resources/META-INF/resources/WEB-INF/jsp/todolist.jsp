@@ -7,31 +7,30 @@
 </head>
 <body>
 	
-	<h1>Welcome, ${username}!</h1>
-	<hr>
-	
-	<h3>Your Tasks:</h3>
-	
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Description</th>
-				<th>Target date</th>
-				<th>Status</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${todos}" var="todo">
+	<div class="container">
+		<h1>Your Tasks:</h1>
+		
+		<table class="table">
+			<thead>
 				<tr>
-					<td>${todo.id}</td>
-					<td>${todo.desc}</td>
-					<td>${todo.targetDate}</td>
-					<td>${todo.done}</td>
+					<th>ID</th>
+					<th>Description</th>
+					<th>Target date</th>
+					<th>Status</th>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<c:forEach items="${todos}" var="todo">
+					<tr>
+						<td>${todo.id}</td>
+						<td>${todo.desc}</td>
+						<td>${todo.targetDate}</td>
+						<td>${todo.done}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 	
 	
 		<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
