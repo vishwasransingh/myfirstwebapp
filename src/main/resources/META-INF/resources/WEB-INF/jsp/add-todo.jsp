@@ -14,6 +14,7 @@
 		
 		<form:form method="post" modelAttribute="toDo">
 			Task Description: <form:input type="text" path="desc" required="required"/>
+					<form:errors path="desc" cssClass="alert-danger"/>
 			<form:input type="hidden" path="id"/>
 			<form:input type="hidden" path="done"/>
 			<input type="submit" value = "Add" class="btn btn-success">

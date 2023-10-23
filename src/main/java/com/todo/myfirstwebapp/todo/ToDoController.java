@@ -4,11 +4,14 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import jakarta.validation.Valid;
 
 @Controller
 @SessionAttributes("username")
@@ -36,7 +39,9 @@ public class ToDoController {
 	}
 	
 	@PostMapping("add-todo")
-	public String addNewToDo(Model model, ToDo toDo) {
+	public String addNewToDo(Model model, @Valid ToDo toDo, BindingResult result) {
+		if (result.hasErrors())
+			return "add-todo";
 		String userName = (String)model.getAttribute("name");
 		toDoService.addToDo(userName, toDo.getDesc(), LocalDate.now().plusYears(1), false);
 		return "redirect:list-todo";

@@ -4,10 +4,14 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.Size;
+
 public class ToDo {
 
 	private int id;
 	private String username;
+	
+	@Size(min=5, message="Description should be at least 5 characters long.")
 	private String desc;
 	private LocalDate targetDate;
 	private Boolean done;
