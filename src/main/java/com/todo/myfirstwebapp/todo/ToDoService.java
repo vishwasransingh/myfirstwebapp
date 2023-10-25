@@ -2,6 +2,7 @@ package com.todo.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -29,8 +30,25 @@ public class ToDoService {
 	}
 	
 	public void deleteToDo(int id) {
+		/*
 		Predicate<? super ToDo> predicate
 			= toDo -> toDo.getId() == id;
 			todos.removeIf(predicate);
+		*/
+		
+		Iterator<ToDo> iterator = todos.iterator();
+		while (iterator.hasNext()) {
+			ToDo toDo = iterator.next();
+			if (toDo.getId() == id) {
+				iterator.remove();
+			}
+		}
+	}
+	
+	public ToDo findById(int id) {
+		Predicate<? super ToDo> predicate
+		= toDo -> toDo.getId() == id;
+		ToDo todo = todos.stream().filter(predicate).findFirst().get();
+		return todo;
 	}
 }
