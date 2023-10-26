@@ -8,6 +8,8 @@ import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
+import jakarta.validation.Valid;
+
 @Service
 public class ToDoService {
 
@@ -50,5 +52,10 @@ public class ToDoService {
 		= toDo -> toDo.getId() == id;
 		ToDo todo = todos.stream().filter(predicate).findFirst().get();
 		return todo;
+	}
+
+	public void updateToDo(@Valid ToDo toDo) {
+		deleteToDo(toDo.getId());
+		todos.add(toDo);
 	}
 }

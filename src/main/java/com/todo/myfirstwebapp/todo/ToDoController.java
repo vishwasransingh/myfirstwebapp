@@ -27,7 +27,7 @@ public class ToDoController {
 	public String listAllToDos(Model model) {
 		model.addAttribute("todos", toDoService.findByUserName("Vishwas"));
 		model.addAttribute("username", "Vishwas");
-		return "list-todo";
+		return "listtodo";
 	}
 	
 	@GetMapping("add-todo")
@@ -35,13 +35,14 @@ public class ToDoController {
 		String userName = (String)model.getAttribute("name");
 		ToDo toDo = new ToDo(0, userName, "", LocalDate.now().plusYears(1), false);
 		model.addAttribute("toDo", toDo);
-		return "add-todo";
+		model.addAttribute("pageName","Add Task");
+		return "addtodo";
 	}
 	
 	@PostMapping("add-todo")
 	public String addNewToDo(Model model, @Valid ToDo toDo, BindingResult result) {
 		if (result.hasErrors())
-			return "add-todo";
+			return "addtodo";
 		String userName = (String)model.getAttribute("name");
 		toDoService.addToDo(userName, toDo.getDesc(), LocalDate.now().plusYears(1), false);
 		return "redirect:list-todo";
@@ -57,7 +58,18 @@ public class ToDoController {
 	public String showUpdateToDoPage(@RequestParam int id, Model model) {
 		ToDo todo = toDoService.findById(id);
 		model.addAttribute("toDo",todo);
-		return "add-todo";
+		model.addAttribute("pageName","Update Task");
+		return "addtodo";
+	}
+	
+	@PostMapping("update-todo")
+	public String updateToDo(Model model, @Valid ToDo toDo, BindingResult result) {
+		if (result.hasErrors())
+			return "addtodo";
+		String userName = (String)model.getAttribute("name");
+		toDo.setUsername(userName);
+		toDoService.updateToDo(toDo);
+		return "redirect:list-todo";
 	}
 	
 }

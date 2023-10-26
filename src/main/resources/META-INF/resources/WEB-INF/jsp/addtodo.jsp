@@ -10,7 +10,7 @@
 <body>
 	
 	<div class="container">
-		<h1>Add Task</h1>
+		<h1>${pageName}</h1>
 		
 		<form:form method="post" modelAttribute="toDo">
 			Task Description: <form:input type="text" path="desc" required="required"/>
