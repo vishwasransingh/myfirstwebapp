@@ -44,7 +44,7 @@ public class ToDoController {
 		if (result.hasErrors())
 			return "addtodo";
 		String userName = (String)model.getAttribute("name");
-		toDoService.addToDo(userName, toDo.getDesc(), LocalDate.now().plusYears(1), false);
+		toDoService.addToDo(userName, toDo.getDesc(), toDo.getTargetDate(), false);
 		return "redirect:list-todo";
 	}
 	
