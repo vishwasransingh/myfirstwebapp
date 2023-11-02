@@ -2,6 +2,8 @@ package com.todo.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,14 +27,21 @@ public class ToDoController {
 	
 	@RequestMapping("list-todo")
 	public String listAllToDos(Model model) {
-		model.addAttribute("todos", toDoService.findByUserName("Vishwas"));
+		String userName = getLoggedInUsername(model);
+		model.addAttribute("todos", toDoService.findByUserName(userName));
 		model.addAttribute("username", "Vishwas");
 		return "listtodo";
+	}
+
+	private String getLoggedInUsername(Model model) {
+		Authentication authentication = 
+				SecurityContextHolder.getContext().getAuthentication();
+		return authentication.getName();
 	}
 	
 	@GetMapping("add-todo")
 	public String showNewToDoPage(Model model) {
-		String userName = (String)model.getAttribute("name");
+		String userName = getLoggedInUsername(model);
 		ToDo toDo = new ToDo(0, userName, "", LocalDate.now().plusYears(1), false);
 		model.addAttribute("toDo", toDo);
 		model.addAttribute("pageName","Add Task");
@@ -43,7 +52,7 @@ public class ToDoController {
 	public String addNewToDo(Model model, @Valid ToDo toDo, BindingResult result) {
 		if (result.hasErrors())
 			return "addtodo";
-		String userName = (String)model.getAttribute("name");
+		String userName = getLoggedInUsername(model);
 		toDoService.addToDo(userName, toDo.getDesc(), toDo.getTargetDate(), false);
 		return "redirect:list-todo";
 	}
@@ -66,7 +75,7 @@ public class ToDoController {
 	public String updateToDo(Model model, @Valid ToDo toDo, BindingResult result) {
 		if (result.hasErrors())
 			return "addtodo";
-		String userName = (String)model.getAttribute("name");
+		String userName = getLoggedInUsername(model);
 		toDo.setUsername(userName);
 		toDoService.updateToDo(toDo);
 		return "redirect:list-todo";

@@ -17,27 +17,28 @@ public class ToDoService {
 	private static List<ToDo> todos = new ArrayList<>();
 
 	static {
-		todos.add(new ToDo(++todosCount, "Vishwas", "Core Java and Advanced Java", LocalDate.now().plusMonths(1), false));
+		todos.add(
+				new ToDo(++todosCount, "Vishwas", "Core Java and Advanced Java", LocalDate.now().plusMonths(1), false));
 		todos.add(new ToDo(++todosCount, "Satu", "SQL, MongoDB", LocalDate.now().plusMonths(2), false));
 		todos.add(new ToDo(++todosCount, "XYZ", "Advanced Java", LocalDate.now().plusMonths(3), false));
 	}
 
 	public List<ToDo> findByUserName(String username) {
-		return todos;
+		Predicate<? super ToDo> predicate = toDo -> toDo.getUsername().equalsIgnoreCase(username);
+		return todos.stream().filter(predicate).toList();
 	}
 
 	public void addToDo(String userName, String desc, LocalDate targetDate, boolean isDone) {
 		ToDo toDo = new ToDo(++todosCount, userName, desc, targetDate, isDone);
 		todos.add(toDo);
 	}
-	
+
 	public void deleteToDo(int id) {
 		/*
-		Predicate<? super ToDo> predicate
-			= toDo -> toDo.getId() == id;
-			todos.removeIf(predicate);
-		*/
-		
+		 * Predicate<? super ToDo> predicate = toDo -> toDo.getId() == id;
+		 * todos.removeIf(predicate);
+		 */
+
 		Iterator<ToDo> iterator = todos.iterator();
 		while (iterator.hasNext()) {
 			ToDo toDo = iterator.next();
@@ -46,10 +47,9 @@ public class ToDoService {
 			}
 		}
 	}
-	
+
 	public ToDo findById(int id) {
-		Predicate<? super ToDo> predicate
-		= toDo -> toDo.getId() == id;
+		Predicate<? super ToDo> predicate = toDo -> toDo.getId() == id;
 		ToDo todo = todos.stream().filter(predicate).findFirst().get();
 		return todo;
 	}
