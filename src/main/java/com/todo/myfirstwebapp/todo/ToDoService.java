@@ -17,8 +17,7 @@ public class ToDoService {
 	private static List<ToDo> todos = new ArrayList<>();
 
 	static {
-		todos.add(
-				new ToDo(++todosCount, "Vishwas", "Core Java and Advanced Java", LocalDate.now().plusMonths(1), false));
+		todos.add(new ToDo(++todosCount, "Vishwas", "Core Java and Advanced Java", LocalDate.now().plusMonths(1), false));
 		todos.add(new ToDo(++todosCount, "Satu", "SQL, MongoDB", LocalDate.now().plusMonths(2), false));
 		todos.add(new ToDo(++todosCount, "XYZ", "Advanced Java", LocalDate.now().plusMonths(3), false));
 	}
