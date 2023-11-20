@@ -29,7 +29,7 @@ public class ToDoController {
 	public String listAllToDos(Model model) {
 		String userName = getLoggedInUsername(model);
 		model.addAttribute("todos", toDoService.findByUserName(userName));
-		model.addAttribute("username", "Vishwas");
+		model.addAttribute("username", userName);
 		return "listtodo";
 	}
 

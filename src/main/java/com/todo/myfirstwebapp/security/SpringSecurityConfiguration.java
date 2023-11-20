@@ -12,7 +12,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class SpringSecurityConfiguration {
-
+	
 	@Bean
 	public InMemoryUserDetailsManager createUserDetailsManager() {
 
@@ -20,7 +20,7 @@ public class SpringSecurityConfiguration {
 		UserDetails userDetails2 = createNewUser("Satu", "12345");
 		UserDetails userDetails3 = createNewUser("XYZ", "12345");
 
-		return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+		return new InMemoryUserDetailsManager(userDetails1, userDetails2, userDetails3);
 	}
 
 	private UserDetails createNewUser(String username, String password) {
