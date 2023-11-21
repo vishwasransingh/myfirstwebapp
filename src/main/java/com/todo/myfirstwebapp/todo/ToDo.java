@@ -24,6 +24,10 @@ public class ToDo {
 	private LocalDate targetDate;
 
 	private Boolean done;
+	
+	ToDo(){
+		
+	}
 
 	public ToDo(int id, String username, String desc, LocalDate targetDate, Boolean done) {
 		super();
