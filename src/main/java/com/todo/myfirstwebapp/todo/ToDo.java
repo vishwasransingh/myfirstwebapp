@@ -18,6 +18,7 @@ public class ToDo {
 	
 	private String username;
 
+	@Column(name="description")
 	@Size(min = 5, message = "Description should be at least 5 characters long.")
 	private String desc;
 

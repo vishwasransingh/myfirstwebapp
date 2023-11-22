@@ -28,10 +28,8 @@
 	
 </div>
 	
-	<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
-	
+	<!-- <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 	
 	<script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript">
@@ -39,5 +37,5 @@
 		    format: 'yyyy-mm-dd',
 		    startDate: '-3d'
 		});
-	</script>
+	</script>-->
 <%@ include file="common/footer.jspf"%>
