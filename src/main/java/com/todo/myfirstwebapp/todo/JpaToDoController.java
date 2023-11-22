@@ -17,13 +17,11 @@ import jakarta.validation.Valid;
 
 @Controller
 @SessionAttributes("username")
-public class JpaController {
+public class JpaToDoController {
 	
-	private ToDoService toDoService;
 	private ToDoRepository toDoRepository;
 	
-	JpaController(ToDoService toDoService, ToDoRepository toDoRepository) {
-		this.toDoService = toDoService;
+	JpaToDoController(ToDoRepository toDoRepository) {
 		this.toDoRepository = toDoRepository;
 	}
 	
@@ -55,19 +53,22 @@ public class JpaController {
 		if (result.hasErrors())
 			return "addtodo";
 		String userName = getLoggedInUsername(model);
-		toDoService.addToDo(userName, toDo.getDesc(), toDo.getTargetDate(), false);
+		toDo.setUsername(userName);
+		toDoRepository.save(toDo);
+		//toDoService.addToDo(userName, toDo.getDesc(), toDo.getTargetDate(), false);
 		return "redirect:list-todo";
 	}
 	
 	@GetMapping("delete-todo")
 	public String deleteToDo(@RequestParam int id) {
-		toDoService.deleteToDo(id);
+		toDoRepository.deleteById(id);
+		//toDoService.deleteToDo(id);
 		return "redirect:list-todo";
 	}
 	
 	@GetMapping("update-todo")
 	public String showUpdateToDoPage(@RequestParam int id, Model model) {
-		ToDo todo = toDoService.findById(id);
+		ToDo todo = toDoRepository.findById(id).get();
 		model.addAttribute("toDo",todo);
 		model.addAttribute("pageName","Update Task");
 		return "addtodo";
@@ -79,7 +80,7 @@ public class JpaController {
 			return "addtodo";
 		String userName = getLoggedInUsername(model);
 		toDo.setUsername(userName);
-		toDoService.updateToDo(toDo);
+		toDoRepository.save(toDo);
 		return "redirect:list-todo";
 	}
 	
