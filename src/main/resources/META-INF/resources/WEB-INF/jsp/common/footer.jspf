@@ -1,3 +1,12 @@
+<br>
+<div class=container>
+	
+	<form action="/shutdown" method="post" class="position-fixed bottom-0 end-0 p-3">
+            <button type="submit" class="btn btn-danger">Close App</button>
+    </form>
+	
+</div>
+
 <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 	<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 	
