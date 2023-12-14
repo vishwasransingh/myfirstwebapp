@@ -42,19 +42,21 @@ Ensure you have the following prerequisites installed:
    mvn spring-boot:run
 
 ### Usage
-### 1. Sign-In
-Upon launching the application, you will be automatically directed to the sign-in page. Enter your credentials to access your personalized to-do list.
 
-To-Do List Operations
-Adding a Task: Click on the "Add Task" button, enter the task details, and submit.
+### Sign-In
+Upon launching the application, you will be automatically directed to the sign-in page. Enter your credentials to access your personalized to-do list. Creating new user is under development. Right now ony 3 users are hard-coded.
 
-Removing a Task: Use the "Remove" button next to each task to delete it from your list.
+### To-Do List Operations
+1. Adding a Task: Click on the "Add Task" button, enter the task details, and submit.
 
-Updating a Task: Click on the task you want to update, modify the details, and save the changes.
+2. Removing a Task: Use the "Remove" button next to each task to delete it from your list.
+
+3. Updating a Task: Click on the task you want to update, modify the details, and save the changes.
 
 ### Features
-Terminating the App
-Click on the "Close App" button to gracefully shut down the application.
+1. Secure login: Maintenance of multiple users and their separate data in database.
+2. Auto launch and termination button in UI.
+The browser is automatically opened with the launch of app. Clicking on the "Close App" button to gracefully shuts down the application.
 
 ### Acknowledgments
 Spring Boot - The framework used for building the application.
