@@ -48,14 +48,25 @@ Upon launching the application, you will be automatically directed to the sign-i
 
 ### To-Do List Operations
 1. Adding a Task: Click on the "Add Task" button, enter the task details, and submit.
-
-2. Removing a Task: Use the "Remove" button next to each task to delete it from your list.
+   ![add-task](https://github.com/vishwasransingh/todo-manager/assets/142225419/4cea5ffa-3a1b-46e5-bf7e-82836abb029b)
+   
+2. Removing a Task: Use the "Delete" button next to each task to delete it from your list.
+  ![delete-task](https://github.com/vishwasransingh/todo-manager/assets/142225419/8706d10c-58ea-4388-81d5-bed3defa99ae)
 
 3. Updating a Task: Click on the task you want to update, modify the details, and save the changes.
+   ![update-task](https://github.com/vishwasransingh/todo-manager/assets/142225419/13bd19f1-98b4-4668-b632-166aa6f3871f)
+   
+4. List all Tasks: Logging in redirects to the list of current user's tasks.
+    ![task-list](https://github.com/vishwasransingh/todo-manager/assets/142225419/6a427e31-131f-410f-928f-b823d7166ace)
 
 ### Features
-1. Secure login: Maintenance of multiple users and their separate data in database.
-2. Auto launch and termination button in UI.
+1. Secure login using Spring Security: Maintenance of multiple users and their separate data in database.
+   ![login](https://github.com/vishwasransingh/todo-manager/assets/142225419/681670bd-97cf-466d-8988-f68f33c97eb3)
+   Signing out will result in closure of users session and redirecting to the log-in page.
+   ![sign-out](https://github.com/vishwasransingh/todo-manager/assets/142225419/ff3c1acb-077f-49b0-8ab4-3161bd1919a0)
+
+
+3. Auto launch and termination button in UI.
 The browser is automatically opened with the launch of app. Clicking on the "Close App" button to gracefully shuts down the application.
 
 ### Acknowledgments
