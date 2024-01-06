@@ -28,7 +28,7 @@ Ensure you have the following prerequisites installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/todo-list-manager.git
+   git clone https://github.com/vishwasransingh/todo-list-manager.git
 2. Navigate to the project directory:
    ```bash
    cd your-path\todo-list-manager
